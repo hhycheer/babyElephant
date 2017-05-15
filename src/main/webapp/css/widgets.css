@@ -11,7 +11,7 @@
 	font-size:19px;
 	height: 24px;
 	padding: 2px 14px;
-	background:url('../images/background-gray.png') repeat; 
+	background:url('/img/blog/background-gray.png') repeat;
 	color: #fff; 
 	line-height: 24px;
 	margin: 0 0 15px 0;
@@ -53,7 +53,7 @@
 	height: 24px;
 	padding: 2px 16px;
 	margin:0 2px 0 0; 
-	background:url('../images/background-gray.png') repeat; 
+	background:url('/img/blog/background-gray.png') repeat;
 	color: #fff; 
 	line-height: 23px;
 	display: block;
@@ -115,7 +115,7 @@
 	padding: 2px 14px;
 	margin-bottom:2px;
 	border-left:5px solid #1a86ac; 
-	background:url('../images/background-gray.png') repeat; 
+	background:url('/img/blog/background-gray.png') repeat;
 	color: #fff; 
 	line-height: 24px;
 	font-family:'BebasNeueRegular';

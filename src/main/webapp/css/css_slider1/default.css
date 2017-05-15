@@ -35,7 +35,7 @@ Author URI: http://dev7studios.com
 .theme-default .nivo-controlNav a {
 	display:block;
 
-	background:url() no-repeat;
+	background:url(loading.gif) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin-right:3px;
