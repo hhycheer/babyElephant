@@ -4404,9 +4404,6 @@ a.close-canvas-menu:hover {
     float: left;
 }
 
-.modal-backdrop {
-    z-index: 2040 !important;
-}
 
 .modal {
     z-index: 2050 !important;

@@ -212,7 +212,7 @@ div.tablediv > .table-bordered {
 	overflow:hidden;
 	display:none;
 	border:0 none;
-	z-index: 99999;
+	z-index: 999;
 
 }
 /* Footer */
