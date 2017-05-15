@@ -144,9 +144,8 @@
 				<nav role="navigation">
 					<ul class="pull-left left-menu">
 						<li><a href="index.html">首页</a></li>
-						<li><a href="tour.html">游记</a></li>
 						<li><a href="/about.html">进行中</a></li>
-						<li><a href="/blog.html">目的地</a></li>
+						<li><a href="/blog.html">游记</a></li>
 						<li><a href="pricing.html">商品</a></li>
 					</ul>
 					<h1 id="fh5co-logo"><a href="index.html">小象旅游</a></h1>
@@ -184,7 +183,7 @@
 			<div class="container">
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-6 col-md-offset-3 text-center">
-						<h2 class="fh5co-lead animate-box">热门游记</h2>
+						<h2 class="fh5co-lead animate-box">历史游记</h2>
 						<p class="fh5co-sub-lead animate-box">很早以前，人类就就已经开始旅行。 </p>
 					</div>
 				</div>
@@ -292,9 +291,9 @@
 						<div class="content">
 							<div class="form loginBox">
 								<form method="post" action="/login" accept-charset="UTF-8">
-									<input id="email" class="form-control" type="text" placeholder="Email" name="email">
-									<input id="password" class="form-control" type="password" placeholder="Password" name="password">
-									<input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+									<input id="email" class="form-control" type="text" placeholder="邮箱" name="email">
+									<input id="password" class="form-control" type="password" placeholder="密码" name="password">
+									<input class="btn btn-default btn-login" type="button" value="登录" onclick="loginAjax()">
 								</form>
 							</div>
 						</div>
@@ -303,10 +302,10 @@
 						<div class="content registerBox" style="display:none;">
 							<div class="form">
 								<form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-									<input id="email" class="form-control" type="text" placeholder="Email" name="email">
-									<input id="password" class="form-control" type="password" placeholder="Password" name="password">
-									<input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-									<input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+									<input id="email" class="form-control" type="text" placeholder="邮箱" name="email">
+									<input id="password" class="form-control" type="password" placeholder="密码" name="password">
+									<input id="password_confirmation" class="form-control" type="password" placeholder="再次输入密码" name="password_confirmation">
+									<input class="btn btn-default btn-register" type="submit" value="注册" name="commit">
 								</form>
 							</div>
 						</div>
@@ -314,13 +313,13 @@
 				</div>
 				<div class="modal-footer">
 					<div class="forgot login-footer">
-                            <span>Looking to
-                                 <a href="javascript: showRegisterForm();">create an account</a>
+                            <span>去往
+                                 <a href="javascript: showRegisterForm();">注册</a>
                             ?</span>
 					</div>
 					<div class="forgot register-footer" style="display:none">
-						<span>Already have an account?</span>
-						<a href="javascript: showLoginForm();">Login</a>
+						<span>已经注册？</span>
+						<a href="javascript: showLoginForm();">登录</a>
 					</div>
 				</div>
 			</div>
