@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.babyElephant.dao.UserDao">
+
+    <select id="getUser" parameterType="com.babyElephant.po.User" resultType="int">
+        SELECT count(*) FROM  T_USER WHERE USERNAME=#{userName} AND  PASSWORD = #{password}
+    </select>
+
+    <insert id="saveUser" parameterType="com.babyElephant.po.User">
+      INSERT INTO  T_USER (UUID,USERNAME,PASSWORD)VALUES (#{uuid},#{userName},#{password})
+    </insert>
+
+</mapper>
