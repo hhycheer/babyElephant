@@ -255,52 +255,19 @@
 				</div>
 
 				<div class="row">
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="fh5co-person">	
+					<div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="(key, value) in activity">
+						<div class="fh5co-person" >
 							<figure class="animate-box">
-								<img src="/img/img_1.jpg" tppabs="http://demo.cssmoban.com/cssthemes3/ft5_34_guide/images/person5.jpg" alt="Free HTML5 Bootstrap Template by FREEHTML5.co" class="img-responsive">
+								<img src="{{value.IMG_URL}}"  class="img-responsive">
 							</figure>
-							<p><h3 class="fh5co-name animate-box">西安  至  杭州</h3></p>
-							<h4 class="fh5co-designation animate-box">2017/05/01---05/03</h4>
-							<p class="fh5co-bio animate-box">小伙伴们，活动开始了！</p>
-							<p class="fh5co-bio animate-box">同行伙伴：10人</p>
-							<p class="fh5co-bio animate-box">出行方式：自驾游</p>
-							<p class="fh5co-bio animate-box">大概费用：1000元/人</p>
-							<p class="fh5co-bio animate-box">Ps:可带家属哦~</p>
-							<p class="fh5co-bio animate-box"><input class="btn btn-default btn-login" type="button" value="加入旅程" onclick="addBaby()"></p>
-
-
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="fh5co-person">
-							<figure class="animate-box">
-								<img src="/img/img_5.jpg"  class="img-responsive">
-							</figure>
-							<p><h3 class="fh5co-name animate-box">北京  至  成都</h3></p>
-							<h4 class="fh5co-designation animate-box">2017/10/01--10/07</h4>
-							<p class="fh5co-bio animate-box">拿出你的勇气，骑出精彩人生！</p>
-							<p class="fh5co-bio animate-box">同行伙伴：6人，报满为止，抓紧机会啦~</p>
-							<p class="fh5co-bio animate-box">出行方式：骑行</p>
-							<p class="fh5co-bio animate-box">大概费用：1500元/人</p>
-							<p class="fh5co-bio animate-box">Ps:新手可带，只要你热情高涨！！</p>
-							<p class="fh5co-bio animate-box"><input class="btn btn-default btn-login" type="button" value="加入旅程" onclick="addBaby()"></p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="fh5co-person">
-							<figure class="animate-box">
-								<img src="/img/img_6.jpg" class="img-responsive">
-							</figure>
-							<p><h3 class="fh5co-name animate-box">郑州  至  厦门</h3></p>
-							<h4 class="fh5co-designation animate-box">2017/10/01--10/07</h4>
-							<p class="fh5co-bio animate-box">拿出你的勇气！</p>
-							<p class="fh5co-bio animate-box">同行伙伴：6人</p>
-							<p class="fh5co-bio animate-box">出行方式：骑行</p>
-							<p class="fh5co-bio animate-box">大概费用：1500元/人</p>
-							<p class="fh5co-bio animate-box">Ps:新手可带，只要你热情高涨！！</p>
-							<p class="fh5co-bio animate-box"><input class="btn btn-default btn-login" type="button" value="加入旅程" onclick="addBaby()"></p>
-
+							<p><h3 class="fh5co-name animate-box">{{value.NAME}}</h3></p>
+							<h4 class="fh5co-designation animate-box">{{value.TIME}}</h4>
+							<p class="fh5co-bio animate-box">{{value.TITLE}}</p>
+							<p class="fh5co-bio animate-box">同行伙伴：{{value.NUMBER}}人</p>
+							<p class="fh5co-bio animate-box">出行方式：<span ng-if="value.TYPE==0">自驾</span><span ng-if="value.TYPE==1">徒步</span><span ng-if="value.TYPE==2">骑行</span></p>
+							<p class="fh5co-bio animate-box">大概费用：{{value.MONEY}}元/人</p>
+							<p class="fh5co-bio animate-box">{{value.REMARK}}~</p>
+							<p class="fh5co-bio animate-box"><input class="btn btn-default btn-login" type="button" value="加入旅程" onclick="addBaby({{value.UUID}})"></p>
 						</div>
 					</div>
 				</div>
@@ -453,7 +420,22 @@
             }, function errorCallback(response) {
                 // 请求失败执行代码
             });
+
+
+
+
+            $http({
+                method: 'POST',
+                url: '/activice/getActivice'
+            }).then(function successCallback(response) {
+                $scope.activity=response.data;
+            }, function errorCallback(response) {
+
+                // 请求失败执行代码
+            });
         });
+
+
 	</script>
 
 	</body>

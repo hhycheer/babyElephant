@@ -4,8 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.babyElephant.dao.BannerDao">
 
-    <select id="getBanner" parameterType="com.babyElephant.util.page.Page" resultType="com.babyElephant.po.Banner">
-        SELECT * FROM  T_BANNER WHERE STATUS=#{params.status}
+    <select id="getActivice" resultType="java.util.Map">
+        SELECT  * FROM  T_ACTIVITY ORDER BY CREATE_TIME desc limit 0,3
     </select>
+
+    <select id="getAllActivice"  resultType="java.util.Map">
+      SELECT  * FROM  T_ACTIVITY ORDER BY CREATE_TIME
+    </select>
+
+    <insert id="saveActivice" parameterType="com.babyElephant.vo.Activice">
+        INSERT INTO  T_ACTIVITY (UUID,NAME,TIME,NUMBER,TYPE,MONEY,REMARK,TITLE,CREATE_TIME,IMG_URL)VALUES (#{uuid},#{name},#{time},#{number},#{type},#{money},#{remarks},#{title},#{create_time},#{img_url})
+    </insert>
 
 </mapper>

@@ -393,6 +393,20 @@
             }, function errorCallback(response) {
                 // 请求失败执行代码
             });
+
+            $http({
+                method: 'POST',
+                url: '/user/getActivice'
+            }).then(function successCallback(response) {
+                if(response.data!="ERROR"){
+                    $scope.userName=response.data;
+                    $scope.visible=!$scope.visible;
+                }
+            }, function errorCallback(response) {
+                // 请求失败执行代码
+            });
+
+
         });
 	</script>
 	

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - Bootstrap Table</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="/css/login-register.css" rel="stylesheet" />
+
+</head>
+
+<body class="gray-bg" ng-app="myApp" ng-controller="myCtrl">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>其他</h5>
+            <div class="ibox-tools">
+                <button type="button" class="btn btn-outline btn-default" ng-click="addActivity()">
+                    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="row row-lg">
+                <div class="col-sm-12">
+                    <!-- Example Card View -->
+                    <div class="example-wrap">
+                        <h4 class="example-title">活动管理</h4>
+                        <div class="example">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th data-field="NAME">路线</th>
+                                    <th data-field="NUMBER">人数</th>
+                                    <th data-field="TYPE">类型</th>
+                                    <th data-field="MONEY">金额</th>
+                                    <th data-field="REMARK">备注</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="(key, value) in activity">
+                                    <td>{{value.NAME}}</td>
+                                    <td>{{value.NUMBER}}</td>
+                                    <td><span ng-if="value.TYPE==0">自驾</span> <span ng-if="value.TYPE==1">徒步</span><span ng-if="value.TYPE==2">骑行</span> </td>
+                                    <td>{{value.MONEY}}</td>
+                                    <td>{{value.REMARK}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- End Example Card View -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+
+<div class="modal fade login" id="insertModal">
+    <div class="modal-dialog login animated">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">添加</h4>
+            </div>
+            <div class="modal-body" >
+                <div class="box">
+                    <div class="content">
+                        <div class="form loginBox">
+                            <input id="" class="form-control" type="text" placeholder="路线" ng-model="name">
+                            <input id="password" class="form-control" type="text" placeholder="日期" ng-model="time" >
+                            <input class="form-control" type="text" placeholder="标题" ng-model="title">
+                            <input class="form-control"  type="text" placeholder="人数" ng-model="number">
+                            <select class="form-control"  ng-model="type" >
+                                <option value="0">自驾</option>
+                                <option value="1">徒步</option>
+                                <option value="2">骑行</option>
+                            </select>
+                            <input class="form-control"  type="text" placeholder="金额" ng-model="money">
+                            <input class="form-control"  type="text" placeholder="图片路径" ng-model="img_url">
+                            <input class="form-control"  type="text" placeholder="备注" ng-model="remarks">
+                            <input class="btn btn-default btn-login" type="text" value="提交" ng-click="saveActivity()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="forgot login-footer">
+                <span>
+
+                </span>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 全局js -->
+<script src="/js/jquery.min.js?v=2.1.4"></script>
+<script src="/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="/js/angular/angular.min.js"></script>
+<!-- 自定义js -->
+
+
+<!-- Bootstrap table -->
+<script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<!-- Peity -->
+
+
+
+
+
+</body>
+
+
+<script>
+
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope,$http) {
+
+        $scope.addActivity=function () {
+            $('#insertModal').modal('show');
+        }
+        $scope.saveActivity=function () {
+            var data={'name':$scope.name,'time':$scope.time,'title':$scope.title,'number':$scope.number,'type':$scope.type,'money':$scope.money,'img_url':$scope.img_url,'remarks':$scope.remarks};
+            $http({
+                method: 'POST',
+                url: '/activice/save',
+                data:data
+            }).then(function successCallback(response) {
+                $scope.submit();
+            });
+            $('#insertModal').modal('hide');
+        }
+
+        $scope.submit=function () {
+            $http({
+                method: 'POST',
+                url: '/activice/getAllActivice'
+            }).then(function successCallback(response) {
+                $scope.activity=response.data;
+            });
+        }
+
+        $scope.submit();
+        
+        
+    });
+</script>
+
+
+</html>
