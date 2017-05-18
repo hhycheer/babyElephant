@@ -41,5 +41,14 @@ public class ActiviceController {
     }
 
 
+    @RequestMapping("/partake")
+    public @ResponseBody
+    ReturnMessage partake(@RequestBody String data){
+        return ReturnMessage.SUCCESS;
+    }
+
+
+
+
 
 }

@@ -267,7 +267,7 @@
 							<p class="fh5co-bio animate-box">出行方式：<span ng-if="value.TYPE==0">自驾</span><span ng-if="value.TYPE==1">徒步</span><span ng-if="value.TYPE==2">骑行</span></p>
 							<p class="fh5co-bio animate-box">大概费用：{{value.MONEY}}元/人</p>
 							<p class="fh5co-bio animate-box">{{value.REMARK}}~</p>
-							<p class="fh5co-bio animate-box"><input class="btn btn-default btn-login" type="button" value="加入旅程" onclick="addBaby({{value.UUID}})"></p>
+							<p class="fh5co-bio animate-box"><input class="btn btn-default btn-login" type="button" value="加入旅程"  ng-click="addBaby(value.UUID)"></p>
 						</div>
 					</div>
 				</div>
@@ -402,9 +402,9 @@
 				$.removeCookie('layoutCookie', { path: '/' }); // remove the value of our cookie 'layoutCookie'
 			});
 		});
-		
-		function addBaby() {
-			alert("加入成功");
+        function addBaby(uuid) {
+
+			alert(uuid);
         }
 
         var app = angular.module('myApp', []);
@@ -420,10 +420,6 @@
             }, function errorCallback(response) {
                 // 请求失败执行代码
             });
-
-
-
-
             $http({
                 method: 'POST',
                 url: '/activice/getActivice'
@@ -433,9 +429,33 @@
 
                 // 请求失败执行代码
             });
+
+            $scope.addBaby=function (value) {
+
+                $http({
+                    method: 'POST',
+                    url: '/user/getLoginStatus'
+                }).then(function successCallback(response) {
+                    if(response.data=="ERROR"){
+						alert("请先登陆");
+                    }else{
+                        var data={"data":value}
+                        $http({
+                            method: 'POST',
+                            url: '/activice/partake',
+                            data:data
+                        }).then(function successCallback(response) {
+
+                        }, function errorCallback(response) {
+
+                            // 请求失败执行代码
+                        });
+					}
+                });
+
+
+            }
         });
-
-
 	</script>
 
 	</body>

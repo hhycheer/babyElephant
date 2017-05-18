@@ -84,7 +84,6 @@ function checkout() {
     $.ajax({
         type: "POST",
         url: "/user/checkout",
-        data: data,
         success: function(){
             location.reload();
         }
@@ -99,7 +98,5 @@ function shakeModal(){
                 $('#loginModal .modal-dialog').removeClass('shake'); 
     }, 1000 ); 
 }
-
-
 
    
