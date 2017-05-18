@@ -1,0 +1,94 @@
+2017-05-19 01:11:23,218 DEBUG conn.PoolingHttpClientConnectionManager Connection manager is shutting down
+2017-05-19 01:11:23,219 DEBUG conn.PoolingHttpClientConnectionManager Connection manager shut down
+2017-05-19 01:12:40,271 DEBUG protocol.RequestAddCookies CookieSpec selected: default
+2017-05-19 01:12:40,291 DEBUG protocol.RequestAuthCache Auth cache not set in the context
+2017-05-19 01:12:40,294 DEBUG conn.PoolingHttpClientConnectionManager Connection request: [route: {}->http://pay.chinaxzf.com:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2017-05-19 01:12:40,313 DEBUG conn.PoolingHttpClientConnectionManager Connection leased: [id: 0][route: {}->http://pay.chinaxzf.com:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-05-19 01:12:40,316 DEBUG execchain.MainClientExec Opening connection {}->http://pay.chinaxzf.com:8080
+2017-05-19 01:12:40,345 DEBUG conn.DefaultHttpClientConnectionOperator Connecting to pay.chinaxzf.com/115.182.226.236:8080
+2017-05-19 01:12:40,361 DEBUG conn.DefaultHttpClientConnectionOperator Connection established 192.168.199.121:60634<->115.182.226.236:8080
+2017-05-19 01:12:40,361 DEBUG execchain.MainClientExec Executing request POST /payment/ScanPayApply.do HTTP/1.1
+2017-05-19 01:12:40,362 DEBUG execchain.MainClientExec Target auth state: UNCHALLENGED
+2017-05-19 01:12:40,362 DEBUG execchain.MainClientExec Proxy auth state: UNCHALLENGED
+2017-05-19 01:12:40,365 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> POST /payment/ScanPayApply.do HTTP/1.1
+2017-05-19 01:12:40,365 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Content-Length: 325
+2017-05-19 01:12:40,365 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2017-05-19 01:12:40,366 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Host: pay.chinaxzf.com:8080
+2017-05-19 01:12:40,366 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Connection: Keep-Alive
+2017-05-19 01:12:40,366 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_121)
+2017-05-19 01:12:40,366 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2017-05-19 01:12:40,366 DEBUG conn.Wire http-outgoing-0 >> "POST /payment/ScanPayApply.do HTTP/1.1[\r][\n]"
+2017-05-19 01:12:40,366 DEBUG conn.Wire http-outgoing-0 >> "Content-Length: 325[\r][\n]"
+2017-05-19 01:12:40,367 DEBUG conn.Wire http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2017-05-19 01:12:40,367 DEBUG conn.Wire http-outgoing-0 >> "Host: pay.chinaxzf.com:8080[\r][\n]"
+2017-05-19 01:12:40,367 DEBUG conn.Wire http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-05-19 01:12:40,367 DEBUG conn.Wire http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_121)[\r][\n]"
+2017-05-19 01:12:40,367 DEBUG conn.Wire http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2017-05-19 01:12:40,367 DEBUG conn.Wire http-outgoing-0 >> "[\r][\n]"
+2017-05-19 01:12:40,367 DEBUG conn.Wire http-outgoing-0 >> "asynNotifyUrl=www.baidu.com&currency=RMB&merId=00000000518772&orderAmount=100&orderDate=20170519011239&payMode=00022&prdAmt=100&prdName=%E5%B0%8F%E8%B1%A1%E6%97%85%E6%B8%B8&prdOrdNo=1495127559008&receivableType=D00&signData=6C12D24624840D89CFE70C53EA9D8F61&signType=MD5&synNotifyUrl=www.baidu.com&transType=0008&versionId=1.0"
+2017-05-19 01:12:41,363 DEBUG conn.Wire http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-05-19 01:12:41,364 DEBUG conn.Wire http-outgoing-0 << "Server: Tengine/2.1.1[\r][\n]"
+2017-05-19 01:12:41,364 DEBUG conn.Wire http-outgoing-0 << "Date: Thu, 18 May 2017 17:12:41 GMT[\r][\n]"
+2017-05-19 01:12:41,366 DEBUG conn.Wire http-outgoing-0 << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+2017-05-19 01:12:41,366 DEBUG conn.Wire http-outgoing-0 << "Content-Length: 547[\r][\n]"
+2017-05-19 01:12:41,366 DEBUG conn.Wire http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-05-19 01:12:41,366 DEBUG conn.Wire http-outgoing-0 << "[\r][\n]"
+2017-05-19 01:12:41,367 DEBUG conn.Wire http-outgoing-0 << "{"platmerord":"865253816839208960","prdAmt":"100","orderDate":"20170519011239","signType":"MD5","merId":"00000000518772","receivableType":"D00","code":"1","prdName":"[0xe5][0xb0][0x8f][0xe8][0xb1][0xa1][0xe6][0x97][0x85][0xe6][0xb8][0xb8]","serviceName":"[0xe6][0x94][0xaf][0xe4][0xbb][0x98][0xe7][0x94][0xb3][0xe8][0xaf][0xb7]-[0xe6][0x89][0xab][0xe7][0xa0][0x81][0xe6][0x94][0xaf][0xe4][0xbb][0x98][0xe8][0xae][0xa2][0xe5][0x8d][0x95][0xe5][0xbb][0xba][0xe7][0xab][0x8b]","currency":"RMB","transType":"0008","payMode":"00022","prdOrdNo":"1495127559008","retCode":"1","orderAmount":"100","retMsg":"[0xe4][0xb8][0x8b][0xe5][0x8d][0x95][0xe6][0x88][0x90][0xe5][0x8a][0x9f]","qrcode":"weixin://wxpay/bizpayurl?pr=eRhEYQf","versionId":"1.0","synNotifyUrl":"www.baidu.com","signData":"C0D20CDAD2471D03F2A31622225C9B7E","asynNotifyUrl":"www.baidu.com"}"
+2017-05-19 01:12:41,371 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << HTTP/1.1 200 OK
+2017-05-19 01:12:41,371 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Server: Tengine/2.1.1
+2017-05-19 01:12:41,371 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Date: Thu, 18 May 2017 17:12:41 GMT
+2017-05-19 01:12:41,372 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Content-Type: text/html;charset=UTF-8
+2017-05-19 01:12:41,372 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Content-Length: 547
+2017-05-19 01:12:41,372 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Connection: keep-alive
+2017-05-19 01:12:41,376 DEBUG execchain.MainClientExec Connection can be kept alive indefinitely
+2017-05-19 01:12:41,379 DEBUG conn.PoolingHttpClientConnectionManager Connection [id: 0][route: {}->http://pay.chinaxzf.com:8080] can be kept alive indefinitely
+2017-05-19 01:12:41,380 DEBUG conn.PoolingHttpClientConnectionManager Connection released: [id: 0][route: {}->http://pay.chinaxzf.com:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-05-19 01:12:41,380 DEBUG conn.PoolingHttpClientConnectionManager Connection manager is shutting down
+2017-05-19 01:12:41,380 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0: Close connection
+2017-05-19 01:12:41,381 DEBUG conn.PoolingHttpClientConnectionManager Connection manager shut down
+2017-05-19 01:13:03,747 DEBUG protocol.RequestAddCookies CookieSpec selected: default
+2017-05-19 01:13:03,756 DEBUG protocol.RequestAuthCache Auth cache not set in the context
+2017-05-19 01:13:03,758 DEBUG conn.PoolingHttpClientConnectionManager Connection request: [route: {}->http://pay.chinaxzf.com:8080][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2017-05-19 01:13:03,769 DEBUG conn.PoolingHttpClientConnectionManager Connection leased: [id: 0][route: {}->http://pay.chinaxzf.com:8080][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-05-19 01:13:03,770 DEBUG execchain.MainClientExec Opening connection {}->http://pay.chinaxzf.com:8080
+2017-05-19 01:13:03,775 DEBUG conn.DefaultHttpClientConnectionOperator Connecting to pay.chinaxzf.com/115.182.226.236:8080
+2017-05-19 01:13:03,790 DEBUG conn.DefaultHttpClientConnectionOperator Connection established 192.168.199.121:60640<->115.182.226.236:8080
+2017-05-19 01:13:03,790 DEBUG execchain.MainClientExec Executing request POST /payment/ScanPayApply.do HTTP/1.1
+2017-05-19 01:13:03,790 DEBUG execchain.MainClientExec Target auth state: UNCHALLENGED
+2017-05-19 01:13:03,791 DEBUG execchain.MainClientExec Proxy auth state: UNCHALLENGED
+2017-05-19 01:13:03,793 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> POST /payment/ScanPayApply.do HTTP/1.1
+2017-05-19 01:13:03,794 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Content-Length: 325
+2017-05-19 01:13:03,794 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2017-05-19 01:13:03,794 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Host: pay.chinaxzf.com:8080
+2017-05-19 01:13:03,794 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Connection: Keep-Alive
+2017-05-19 01:13:03,794 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_121)
+2017-05-19 01:13:03,794 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2017-05-19 01:13:03,795 DEBUG conn.Wire http-outgoing-0 >> "POST /payment/ScanPayApply.do HTTP/1.1[\r][\n]"
+2017-05-19 01:13:03,795 DEBUG conn.Wire http-outgoing-0 >> "Content-Length: 325[\r][\n]"
+2017-05-19 01:13:03,795 DEBUG conn.Wire http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2017-05-19 01:13:03,795 DEBUG conn.Wire http-outgoing-0 >> "Host: pay.chinaxzf.com:8080[\r][\n]"
+2017-05-19 01:13:03,795 DEBUG conn.Wire http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-05-19 01:13:03,795 DEBUG conn.Wire http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_121)[\r][\n]"
+2017-05-19 01:13:03,796 DEBUG conn.Wire http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2017-05-19 01:13:03,796 DEBUG conn.Wire http-outgoing-0 >> "[\r][\n]"
+2017-05-19 01:13:03,796 DEBUG conn.Wire http-outgoing-0 >> "asynNotifyUrl=www.baidu.com&currency=RMB&merId=00000000518772&orderAmount=100&orderDate=20170519011302&payMode=00022&prdAmt=100&prdName=%E5%B0%8F%E8%B1%A1%E6%97%85%E6%B8%B8&prdOrdNo=1495127582612&receivableType=D00&signData=18C7E7323E53A9AEFDC6E84DB33BAC62&signType=MD5&synNotifyUrl=www.baidu.com&transType=0008&versionId=1.0"
+2017-05-19 01:13:05,735 DEBUG conn.Wire http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-05-19 01:13:05,735 DEBUG conn.Wire http-outgoing-0 << "Server: Tengine/2.1.1[\r][\n]"
+2017-05-19 01:13:05,735 DEBUG conn.Wire http-outgoing-0 << "Date: Thu, 18 May 2017 17:13:05 GMT[\r][\n]"
+2017-05-19 01:13:05,735 DEBUG conn.Wire http-outgoing-0 << "Content-Type: text/html;charset=UTF-8[\r][\n]"
+2017-05-19 01:13:05,735 DEBUG conn.Wire http-outgoing-0 << "Content-Length: 547[\r][\n]"
+2017-05-19 01:13:05,736 DEBUG conn.Wire http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-05-19 01:13:05,736 DEBUG conn.Wire http-outgoing-0 << "[\r][\n]"
+2017-05-19 01:13:05,736 DEBUG conn.Wire http-outgoing-0 << "{"platmerord":"865253915107557376","prdAmt":"100","orderDate":"20170519011302","signType":"MD5","merId":"00000000518772","receivableType":"D00","code":"1","prdName":"[0xe5][0xb0][0x8f][0xe8][0xb1][0xa1][0xe6][0x97][0x85][0xe6][0xb8][0xb8]","serviceName":"[0xe6][0x94][0xaf][0xe4][0xbb][0x98][0xe7][0x94][0xb3][0xe8][0xaf][0xb7]-[0xe6][0x89][0xab][0xe7][0xa0][0x81][0xe6][0x94][0xaf][0xe4][0xbb][0x98][0xe8][0xae][0xa2][0xe5][0x8d][0x95][0xe5][0xbb][0xba][0xe7][0xab][0x8b]","currency":"RMB","transType":"0008","payMode":"00022","prdOrdNo":"1495127582612","retCode":"1","orderAmount":"100","retMsg":"[0xe4][0xb8][0x8b][0xe5][0x8d][0x95][0xe6][0x88][0x90][0xe5][0x8a][0x9f]","qrcode":"weixin://wxpay/bizpayurl?pr=J8sJxdW","versionId":"1.0","synNotifyUrl":"www.baidu.com","signData":"1C62DF1558DA87681765B0D8CDD19D2E","asynNotifyUrl":"www.baidu.com"}"
+2017-05-19 01:13:05,739 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << HTTP/1.1 200 OK
+2017-05-19 01:13:05,739 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Server: Tengine/2.1.1
+2017-05-19 01:13:05,739 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Date: Thu, 18 May 2017 17:13:05 GMT
+2017-05-19 01:13:05,739 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Content-Type: text/html;charset=UTF-8
+2017-05-19 01:13:05,739 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Content-Length: 547
+2017-05-19 01:13:05,739 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0 << Connection: keep-alive
+2017-05-19 01:13:05,743 DEBUG execchain.MainClientExec Connection can be kept alive indefinitely
+2017-05-19 01:13:05,746 DEBUG conn.PoolingHttpClientConnectionManager Connection [id: 0][route: {}->http://pay.chinaxzf.com:8080] can be kept alive indefinitely
+2017-05-19 01:13:05,747 DEBUG conn.PoolingHttpClientConnectionManager Connection released: [id: 0][route: {}->http://pay.chinaxzf.com:8080][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-05-19 01:13:05,747 DEBUG conn.PoolingHttpClientConnectionManager Connection manager is shutting down
+2017-05-19 01:13:05,747 DEBUG conn.LoggingManagedHttpClientConnection http-outgoing-0: Close connection
+2017-05-19 01:13:05,748 DEBUG conn.PoolingHttpClientConnectionManager Connection manager shut down

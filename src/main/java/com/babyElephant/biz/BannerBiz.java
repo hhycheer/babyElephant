@@ -11,4 +11,6 @@ public interface BannerBiz {
 
      ReturnMessage saveActivice(Activice activice);
 
+     Map<String,String> getUrl() throws Exception;
+
 }

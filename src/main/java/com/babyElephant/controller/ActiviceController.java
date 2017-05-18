@@ -41,9 +41,15 @@ public class ActiviceController {
     }
 
 
+    @RequestMapping("/getURL")
+    public @ResponseBody
+    Map<String,String> getURL() throws Exception {
+        return bannerBiz.getUrl();
+    }
     @RequestMapping("/partake")
     public @ResponseBody
     ReturnMessage partake(@RequestBody String data){
+
         return ReturnMessage.SUCCESS;
     }
 
