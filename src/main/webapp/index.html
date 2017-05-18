@@ -133,7 +133,7 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<body ng-app="myApp" ng-controller="myCtrl">
 	
 	<!-- Loader -->
 	<div class="fh5co-loader"></div>
@@ -149,9 +149,15 @@
 						<li><a href="/shopping.html">商品</a></li>
 					</ul>
 					<h1 id="fh5co-logo"><a href="index.html">小象旅游</a></h1>
-					<ul class="pull-right right-menu" id="loginstatus">
+					<ul class="pull-right right-menu" id="loginstatus" ng-hide="visible">
 						<li><a href="javascript:void(0)" onclick="openLoginModal();">登陆</a></li>
 						<li class="fh5co-cta-btn"><a href="javascript:void(0)" onclick="openRegisterModal();">注册</a></li>
+					</ul>
+					<ul class="pull-right right-menu" ng-show="visible">
+						<li>
+							你好 <a href="#" >{{userName}}</a>
+						</li>
+						<li><a href="#"  onclick="checkout()">退出</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -293,7 +299,7 @@
 
 									<input id="email" class="form-control" type="text" placeholder="邮箱" name="email">
 									<input id="password" class="form-control" type="password" placeholder="密码" name="password">
-									<input class="btn btn-default btn-login" type="button" value="登录" onclick="login()">
+									<input class="btn btn-default btn-login" type="button" value="登录" onclick="loginAjax()">
 
 							</div>
 						</div>
@@ -305,7 +311,7 @@
 									<input id="email1" class="form-control" type="text" placeholder="邮箱" name="email">
 									<input id="password1" class="form-control" type="password" placeholder="密码" name="password">
 									<input id="password_confirmation" class="form-control" type="password" placeholder="再次输入密码" name="password_confirmation">
-									<input class="btn btn-default btn-register" type="button" value="注册"  onclick="save()">
+									<input class="btn btn-default btn-register" type="button" value="注册"  onclick="saveAjax()">
 
 							</div>
 						</div>
@@ -374,37 +380,20 @@
 			});
 		});
 
-	function login() {
-	    var data={'userName':$("#email").val(),'password':$("#password").val()}
-        $.ajax({
-            type: "POST",
-            url: "/user/login",
-            data: data,
-            success: function(msg){
-                if (msg=="ERROR"){
-					alert('失败');
-				}else{
-                    alert('登录成功');
-				}
-            }
-        });
-    }
-        function save() {
-            var data={'userName':$("#email1").val(),'password':$("#password1").val(),'password_confirmation':$("#password_confirmation").val()}
-            $.ajax({
-                type: "POST",
-                url: "/user/save",
-                data: data,
-                success: function(msg){
-                    if (msg=="ERROR"){
-                        alert('注册失败');
-                    }else{
-                        alert("注册成功")
-					}
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope,$http) {
+            $http({
+                method: 'POST',
+                url: '/user/getLoginStatus'
+            }).then(function successCallback(response) {
+                if(response.data!="ERROR"){
+                    $scope.userName=response.data;
+                    $scope.visible=!$scope.visible;
                 }
+            }, function errorCallback(response) {
+                // 请求失败执行代码
             });
-        }
-       
+        });
 	</script>
 	
 

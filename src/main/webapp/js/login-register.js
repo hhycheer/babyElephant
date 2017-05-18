@@ -45,18 +45,50 @@ function openRegisterModal(){
 }
 
 function loginAjax(){
-    /*   Remove this comments when moving to server
-    $.post( "/login", function( data ) {
-            if(data == 1){
-                window.location.replace("/home");            
-            } else {
-                 shakeModal(); 
+    var data={'userName':$("#email").val(),'password':$("#password").val()}
+    $.ajax({
+        type: "POST",
+        url: "/user/login",
+        data: data,
+        success: function(msg){
+            if (msg=="ERROR"){
+                shakeModal();
+            }else{
+                $('#loginModal').modal('hide');
+                location.reload();
             }
-        });
-    */
+        }
+    });
+}
 
-/*   Simulate error message from the server   */
-     shakeModal();
+
+function saveAjax() {
+
+    var data={'userName':$("#email1").val(),'password':$("#password1").val(),'password_confirmation':$("#password_confirmation").val()}
+    $.ajax({
+        type: "POST",
+        url: "/user/save",
+        data: data,
+        success: function(msg){
+            if (msg=="ERROR"){
+                shakeModal();
+            }else{
+                alert("注册成功");
+                $('#loginModal').modal('hide');
+            }
+        }
+    });
+}
+
+function checkout() {
+    $.ajax({
+        type: "POST",
+        url: "/user/checkout",
+        data: data,
+        success: function(){
+            location.reload();
+        }
+    });
 }
 
 function shakeModal(){
@@ -67,5 +99,7 @@ function shakeModal(){
                 $('#loginModal .modal-dialog').removeClass('shake'); 
     }, 1000 ); 
 }
+
+
 
    
